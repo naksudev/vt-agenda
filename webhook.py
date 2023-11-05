@@ -1,6 +1,5 @@
 import requests
 import json
-import base64
 
 def sendWebhook(url):
     webhook_url = url
