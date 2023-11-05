@@ -19,7 +19,6 @@ def sendWebhook(url):
     }
 
     response = requests.post(webhook_url, data={'payload_json': json.dumps(payload)}, files=files)
-    messages = requests.get(webhook_url)
 
     if response.status_code == 200:
         print("[!] Screenshot envoyé dans le channel #edt-screenshot")
