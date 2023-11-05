@@ -1,16 +1,15 @@
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
-
 # VT Automation
 
-Automation of the VT Agenda
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
 ## Screenshot
 
 Too lazy to do it.
 
-## Requirements
+## Requirements for running the script
 
-- Python 
+- Python 3.11 (didn't test with newer or older versions)
+- Discord server
 
 ## How to use it?
 
