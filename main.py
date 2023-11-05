@@ -2,9 +2,11 @@ from webhook import *
 from sb import *
 
 if __name__ == '__main__':
+    
+
     # Select environement
     while True:
-        print("[?] Sélectionnez l'environnement webhook")
+        print("\n[?] Sélectionnez l'environnement webhook")
         envInput = str(input("(dev) (prod) >> "))
 
         if envInput == "dev":

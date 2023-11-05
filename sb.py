@@ -19,11 +19,11 @@ def openAgenda():
     year,week,weekday = currentdate.isocalendar()
 
     while True:
-        print(f"[i] Semaine actuelle: {week}")
+        print(f"\n[i] Semaine actuelle: {week}")
         week = int(input(">> Entrez la semaine voulu: "))
         
         if not week:
-            print("[X] La semaine ne peut pas être vide.")
+            print("\n[X] La semaine ne peut pas être vide.")
             continue
 
         try:
@@ -32,9 +32,9 @@ def openAgenda():
             if 1 <= week <= 52:
                 break
             else:
-                print(f"[X] L'année {year} contient 52 semaines uniquement")
+                print(f"\n[X] L'année {year} contient 52 semaines uniquement")
         except ValueError:
-            print("[X] Veuillez entrer un nombre valide en 1 et 52")
+            print("\n[X] Veuillez entrer un nombre valide en 1 et 52")
 
     url = f"https://edt.univ-evry.fr/index.php?current_year={year}&current_student=68425503&horiz=1&jour=0&current_week={week}"
     imgPath = f"output/{year}-{week}.png"

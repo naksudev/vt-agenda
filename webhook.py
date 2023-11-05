@@ -15,9 +15,9 @@ def sendWebhook(url, imgPath):
     response = requests.post(url, data={'payload_json': json.dumps(payload)}, files=files)
 
     if response.status_code == 200:
-        print("[!] Screenshot envoyé.")
+        print("\n[!] Screenshot envoyé.")
     else:
-        print(f"[X] Erreur webhook ({response.status_code})")
+        print(f"\n[X] Erreur webhook ({response.status_code})")
         print(response.content)
 
 def getImageData(imgPath):
