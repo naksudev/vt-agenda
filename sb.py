@@ -12,7 +12,6 @@ def openAgenda():
     sleep(1.5)
     sb.type("input[name='loginstudent']", "lpisvd_11")
     sb.click("input[name='cookieetudiant']")
-    sleep(1)
     sb.click("input[type='submit']")
     
     # User input 
@@ -20,7 +19,7 @@ def openAgenda():
     year,week,weekday = currentdate.isocalendar()
 
     while True:
-        print(f"Semaine actuelle: {week}")
+        print(f"[i] Semaine actuelle: {week}")
         week = int(input(">> Entrez la semaine voulu: "))
         
         if not week:
@@ -38,7 +37,7 @@ def openAgenda():
             print("Veuillez entrer un nombre valide en 1 et 52")
 
     url = f"https://edt.univ-evry.fr/index.php?current_year={year}&current_student=68425503&horiz=1&jour=0&current_week={week}"
-    imgName = f"{year}-{week}"
+    imgName = f"{year}-{week}.png"
 
     # Screenshot and quit
     sb.open(url)
