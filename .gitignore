@@ -1,0 +1,30 @@
+# Fichiers Python compilés (bytecode)
+__pycache__/
+
+# Fichiers .pyc (bytecode)
+*.pyc
+
+# Répertoire virtuel d'environnement Python
+.venv/
+
+# Fichier de dépendances
+requirements.txt
+
+# Fichiers générés par l'environnement de développement
+.vscode/
+.idea/
+
+# Fichiers de sauvegarde
+*~
+*.swp
+
+# Fichiers de cache et de journaux
+*.log
+*.cache
+
+# Fichiers de configuration spécifiques à l'utilisateur
+.pylintrc
+.editorconfig
+
+# Screenshot du site web
+screenshot.png
