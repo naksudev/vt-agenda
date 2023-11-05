@@ -26,5 +26,5 @@ requirements.txt
 .pylintrc
 .editorconfig
 
-# Screenshot du site web
-screenshot.png
+# Screenshots du site web
+output/*

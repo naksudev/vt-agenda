@@ -1,7 +1,7 @@
 import requests
 import json
 
-def sendWebhook(url, imageName):
+def sendWebhook(url, imgPath):
     payload = {
         "username": "VT Agenda",
         "avatar_url": "https://edt.univ-evry.fr/vt_agenda.png",
@@ -9,7 +9,7 @@ def sendWebhook(url, imageName):
     }
 
     files = {
-        'file': (imageName, getImageData(imageName))
+        'file': (imgPath, getImageData(imgPath))
     }
 
     response = requests.post(url, data={'payload_json': json.dumps(payload)}, files=files)
@@ -20,8 +20,8 @@ def sendWebhook(url, imageName):
         print(f"[X] Erreur webhook ({response.status_code})")
         print(response.content)
 
-def getImageData(imageName):
-    with open(imageName, 'rb') as img:
+def getImageData(imgPath):
+    with open(imgPath, 'rb') as img:
         image_data = img.read()
 
     return image_data

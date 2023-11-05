@@ -23,7 +23,7 @@ def openAgenda():
         week = int(input(">> Entrez la semaine voulu: "))
         
         if not week:
-            print("La semaine ne peut pas être vide.")
+            print("[X] La semaine ne peut pas être vide.")
             continue
 
         try:
@@ -32,16 +32,16 @@ def openAgenda():
             if 1 <= week <= 52:
                 break
             else:
-                print(f"L'année {year} contient 52 semaines uniquement")
+                print(f"[X] L'année {year} contient 52 semaines uniquement")
         except ValueError:
-            print("Veuillez entrer un nombre valide en 1 et 52")
+            print("[X] Veuillez entrer un nombre valide en 1 et 52")
 
     url = f"https://edt.univ-evry.fr/index.php?current_year={year}&current_student=68425503&horiz=1&jour=0&current_week={week}"
-    imgName = f"{year}-{week}.png"
+    imgPath = f"output/{year}-{week}.png"
 
     # Screenshot and quit
     sb.open(url)
-    sb.save_screenshot(imgName)
+    sb.save_screenshot(imgPath)
     sb.quit()
 
-    return imgName 
+    return imgPath 

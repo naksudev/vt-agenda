@@ -16,6 +16,7 @@ if __name__ == '__main__':
         else:
             continue
 
+    # Main script
     screenName = openAgenda()
     sendWebhook(url, screenName)
 
