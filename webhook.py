@@ -1,27 +1,27 @@
 import requests
 import json
 
-def sendWebhook(url):
-    webhook_url = url
-
+def sendWebhook(url, imageName):
     payload = {
-        "wait": True,
         "username": "VT Agenda",
         "avatar_url": "https://edt.univ-evry.fr/vt_agenda.png",
+        "content": "> [Accéder à VT](https://edt.univ-evry.fr/index.php) // `lpisvd_11`"
     }
-
-    with open("screenshot.png", 'rb') as img:
-        image_data = img.read()
 
     files = {
-        'file': ('screenshot.png', image_data)
+        'file': (imageName, getImageData(imageName))
     }
 
-    response = requests.post(webhook_url, data={'payload_json': json.dumps(payload)}, files=files)
+    response = requests.post(url, data={'payload_json': json.dumps(payload)}, files=files)
 
     if response.status_code == 200:
-        print("[!] Screenshot envoyé dans le channel #edt-screenshot")
+        print("[!] Screenshot envoyé.")
     else:
-        print(response.status_code)
+        print(f"[X] Erreur webhook ({response.status_code})")
         print(response.content)
 
+def getImageData(imageName):
+    with open(imageName, 'rb') as img:
+        image_data = img.read()
+
+    return image_data
