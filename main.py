@@ -2,11 +2,9 @@ from webhook import *
 from sb import *
 
 if __name__ == '__main__':
-    
-
     # Select environement
     while True:
-        print("\n[?] Sélectionnez l'environnement webhook")
+        print("[?] Sélectionnez l'environnement webhook")
         envInput = str(input("(dev) (prod) >> "))
 
         if envInput == "dev":
@@ -20,5 +18,6 @@ if __name__ == '__main__':
 
     # Main script
     screenName = openAgenda()
+    cropImg(screenName)
     sendWebhook(url, screenName)
 

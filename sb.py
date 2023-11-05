@@ -1,5 +1,6 @@
 from seleniumbase import Driver
 from time import sleep
+from PIL import Image
 import datetime
 
 def openAgenda():
@@ -44,4 +45,14 @@ def openAgenda():
     sb.save_screenshot(imgPath)
     sb.quit()
 
-    return imgPath 
+    return imgPath
+
+def cropImg(imgPath):
+    img = Image.open(imgPath)
+
+    cropSettings = (24,89,1736,726)
+
+    img.crop((cropSettings)).save(imgPath)
+    print("\n[!] Image rogné.")
+    img.close()
+

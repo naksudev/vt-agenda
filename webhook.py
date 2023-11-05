@@ -8,9 +8,7 @@ def sendWebhook(url, imgPath):
         "content": "> [Accéder à VT](https://edt.univ-evry.fr/index.php) // `lpisvd_11`"
     }
 
-    files = {
-        'file': (imgPath, getImageData(imgPath))
-    }
+    files = { 'file': (imgPath, getImageData(imgPath)) }
 
     response = requests.post(url, data={'payload_json': json.dumps(payload)}, files=files)
 
