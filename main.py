@@ -19,5 +19,5 @@ if __name__ == '__main__':
     # Main script
     screenName = openAgenda()
     cropImg(screenName)
-    sendWebhook(url, screenName)
+    msgWebhook(url, screenName)
 

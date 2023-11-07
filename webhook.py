@@ -1,7 +1,7 @@
 import requests
 import json
 
-def sendWebhook(url, imgPath):
+def msgWebhook(url, imgPath):
     payload = {
         "username": "VT Agenda",
         "avatar_url": "https://edt.univ-evry.fr/vt_agenda.png",
