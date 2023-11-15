@@ -1,5 +1,5 @@
-from webhook import *
-from sb import *
+from modules import sb
+from modules import webhook
 
 if __name__ == '__main__':
     # Select environement
@@ -17,7 +17,7 @@ if __name__ == '__main__':
             continue
 
     # Main script
-    screenName = openAgenda()
-    cropImg(screenName)
-    msgWebhook(url, screenName)
+    screenName = sb.openAgenda()
+    sb.cropImg(screenName)
+    webhook.send(url, screenName)
 

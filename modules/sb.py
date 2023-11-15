@@ -17,15 +17,14 @@ def openAgenda():
     
     # User input 
     currentdate = datetime.date.today()
-    year,week,weekday = currentdate.isocalendar()
+    year, week, weekday = currentdate.isocalendar()
 
     while True:
         print(f"\n[i] Semaine actuelle: {week}")
         week = int(input(">> Entrez la semaine voulu: "))
         
         if not week:
-            print("\n[X] La semaine ne peut pas être vide.")
-            continue
+            break
 
         try:
             week = int(week)

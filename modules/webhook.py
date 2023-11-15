@@ -1,7 +1,7 @@
 import requests
 import json
 
-def msgWebhook(url, imgPath):
+def send(url, imgPath):
     payload = {
         "username": "VT Agenda",
         "avatar_url": "https://edt.univ-evry.fr/vt_agenda.png",
@@ -18,7 +18,7 @@ def msgWebhook(url, imgPath):
         print(f"\n[X] Erreur webhook ({response.status_code})")
         print(response.content)
 
-def getImageData(imgPath):
+def _getImageData(imgPath):
     with open(imgPath, 'rb') as img:
         image_data = img.read()
 
