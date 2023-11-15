@@ -1,6 +1,6 @@
 import pytest
-from sb import *
+from ../modules import sb
 
 def test_openAgenda():
-    result = openAgenda()
+    result = sb.openAgenda()
     assert isinstance(result, str)
