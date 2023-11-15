@@ -7,9 +7,6 @@ __pycache__/
 # Répertoire virtuel d'environnement Python
 .venv/
 
-# Fichier de dépendances
-requirements.txt
-
 # Fichiers générés par l'environnement de développement
 .vscode/
 .idea/
