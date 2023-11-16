@@ -1,5 +1,5 @@
 import pytest
-from ../modules import sb
+from modules import sb
 
 def test_openAgenda():
     result = sb.openAgenda()
