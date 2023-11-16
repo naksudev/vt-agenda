@@ -21,13 +21,13 @@ def openAgenda():
 
     while True:
         print(f"\n[i] Semaine actuelle: {week}")
-        week = int(input(">> Entrez la semaine voulu: "))
+        week_input = int(input(">> Entrez la semaine voulu: "))
         
-        if not week:
+        if not week_input:
             break
 
         try:
-            week = int(week)
+            week = int(week_input)
 
             if 1 <= week <= 52:
                 break
