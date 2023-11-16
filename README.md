@@ -1,6 +1,7 @@
 # VT Automation
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
+![Workflow](![example workflow](https://github.com/github/docs/actions/workflows/python-package.yml/badge.svg))
 
 ## Screenshot
 
@@ -8,7 +9,7 @@ Too lazy to do it.
 
 ## Requirements for running the script
 
-- Python 3.11 (didn't test with newer or older versions)
+- Python 3.9, 3.10 or 3.11  
 - Discord server
 
 ## How to use it?
