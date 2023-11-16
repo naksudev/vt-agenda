@@ -1,7 +1,7 @@
 # VT Automation
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
-![Workflow](https://github.com/naksudev/vt-agenda/actions/workflows/python-package.yml/badge.svg)
+![Workflow](https://github.com/naksudev/vt-agenda/actions/workflows/py-linting.yml/badge.svg)
 
 ## Screenshot
 
