@@ -18,6 +18,7 @@ def openAgenda():
     # User input 
     currentdate = datetime.date.today()
     year, week, weekday = currentdate.isocalendar()
+    year = 2024
 
     while True:
         print(f"\n[i] Semaine actuelle: {week}")
