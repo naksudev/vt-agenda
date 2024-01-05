@@ -1,8 +1,9 @@
-from modules import webhook
+import requests
+import json 
 
 def select_env():
     environments = {
-        "dev": "https://discord.com/api/webhooks/1170076204028678274/_gIwgnTt45boaik2q0hHn15EkyLyl-l0jIrtJw8y-oKUvihM5KSH65d9pUzXh3ifVDDY",
+        "dev": "https://discord.com/api/webhooks/1192904422276223056/65vC8M3I9XO18XYrXmyp-VyYV4AKIdWu4H-AI9mRFdw2HWhUYA7cU5MFV2lvNxPtMMZX",
         "prod": "https://discord.com/api/webhooks/1170093412343627796/gKBXnkcJkxYWq_JaTVLgsu5lsC579ZiN7nfqZtz3iLMYx7mEvJpG1F_4TLmtkC-pnEv4"
     }
 
@@ -15,6 +16,21 @@ def select_env():
         else:
             continue
 
+def hook(url, contentPayload):    
+    payload = {    
+        "username": "VT Agenda",    
+        "avatar_url": "https://edt.univ-evry.fr/vt_agenda.png",    
+        "content": f"{contentPayload}"    
+    }    
+    
+    response = requests.post(url, data={'payload_json': json.dumps(payload)})    
+    
+    if response.status_code == 200 or response.status_code == 204:    
+        print("\n[!] Webhook envoyé (sans attachements)")    
+    else:    
+        print(f"\n[X] Erreur webhook ({response.status_code})")    
+        print(response.content)
+
 def main():
     try:
         webhook_url = select_env()
@@ -26,7 +42,7 @@ def main():
         weekInput = int(input(">> "))
 
         finalURL = f"https://edt.univ-evry.fr/vue_etudiant_horizontale.php?current_year={yearInput}&current_student=68425503&current_week={weekInput}&lar=1920&hau=1080"
-        webhook.send(webhook_url, finalURL)
+        hook(webhook_url, finalURL)
     except ValueError:
         print("Could not convert data to an integer.")
     except Exception as e:
