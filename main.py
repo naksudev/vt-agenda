@@ -3,13 +3,12 @@ import json
 
 def select_env():
     environments = {
-        "dev": "https://discord.com/api/webhooks/1192904422276223056/65vC8M3I9XO18XYrXmyp-VyYV4AKIdWu4H-AI9mRFdw2HWhUYA7cU5MFV2lvNxPtMMZX",
-        "prod": "https://discord.com/api/webhooks/1170093412343627796/gKBXnkcJkxYWq_JaTVLgsu5lsC579ZiN7nfqZtz3iLMYx7mEvJpG1F_4TLmtkC-pnEv4"
+        "main": "CHANGE_ME"
     }
 
     while True:
         print("[?] Sélectionnez l'environnement webhook")
-        env_input = input("(dev) (prod) >> ").lower()
+        env_input = input("(main) >> ").lower()
 
         if env_input in environments:
             return environments[env_input]
@@ -35,13 +34,16 @@ def main():
     try:
         webhook_url = select_env()
 
+        print("[?] Entrez l'ID étudiant (obtenable via l'URL)")
+        studentID = int(input(">> "))
+
         print("[?] Entrez l'année voulue")
         yearInput = int(input(">> "))
 
         print("[?] Entrez la semaine voulue")
         weekInput = int(input(">> "))
 
-        finalURL = f"https://edt.univ-evry.fr/vue_etudiant_horizontale.php?current_year={yearInput}&current_student=68425503&current_week={weekInput}&lar=1920&hau=1080"
+        finalURL = f"https://edt.univ-evry.fr/vue_etudiant_horizontale.php?current_year={yearInput}&current_student={studentID}&current_week={weekInput}&lar=1920&hau=1080"
         hook(webhook_url, finalURL)
     except ValueError:
         print("Could not convert data to an integer.")
